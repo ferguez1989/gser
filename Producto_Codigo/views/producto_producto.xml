@@ -1,4 +1,4 @@
-<odoo 
+<odoo>
     <record id="view_account_invoice_report_search_analytic_accounting" model="ir.ui.view">
         <field name="name">producto.producto.view.form.inherit.code</field>
         <field name="model">product.template</field>
