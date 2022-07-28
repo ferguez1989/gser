@@ -1,5 +1,5 @@
 {
-    "name": "Producto Market Place"
+    "name": "Producto_Market_Place"
     "depends": [
         "product",
     ],
