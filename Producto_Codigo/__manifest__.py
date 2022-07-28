@@ -1,7 +1,7 @@
 {
   "name": "Producto_Market",
   "depends": [
-    "product",
+    "stock",
   ],
   "data": [
     "views/producto_producto.xml",
