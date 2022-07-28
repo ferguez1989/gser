@@ -7,7 +7,7 @@
       <field name="detailed_type" position="after">
         <field name="id_mkt"/>
       </field>
-    <field/>
+    </field>
   </record>
 </odoo>    
 
