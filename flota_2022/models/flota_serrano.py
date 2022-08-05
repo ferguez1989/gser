@@ -29,3 +29,4 @@ class FlotaSerrano(models.Model):
         ondelete='set null',
         index=True,
     )
+#Revisado
