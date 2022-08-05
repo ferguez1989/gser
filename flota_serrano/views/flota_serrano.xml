@@ -12,21 +12,16 @@
             <field name="km"/>
             <field name="rendimiento" readonly="1"/>
             <field name="disel"/>
-          
           </field>
         </field>
     </record>
-
     <record id="flota_serrano_action" model="ir.actions.act_window">
         <field name="name">Flota</field>
         <field name="res_model">flota.serrano</field>
         <field name="view_mode">tree,form</field>
         <field name="context" eval="{'search_default_my_services': 1}"/>
         <field name="help" type="html">
-            <p class="o_view_nocontent_smiling_face">Create the first course
-            </p>
+            <p class="o_view_nocontent_smiling_face">Create the first course</p>
         </field>
     </record>
-
-    <menuitem id="flota_menu" name="Flota" parent="flotaserrano_menu" action="flota_serrano_action"/-->
 </odoo>
