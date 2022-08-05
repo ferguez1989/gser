@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem id="main_flotaserrano_menu" name="Flota Serrano"/>
+    <menuitem id="flotaserrano_menu" name="Flota Serrano" parent="main_flotaserrano_menu"/>
+    <menuitem id="configuration_menu" name="Configuration" parent="main_flotaserrano_menu"/>
+</odoo>

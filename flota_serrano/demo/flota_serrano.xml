@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!--record id="course1" model="service.ext">
+        <field name="x_tarea">Guadalajara - Tepic</field>
+    </record-->
+    <!--record id="course1" model="openacademy.course">
+        <field name="name">Course 1</field-->
+        <!-- no description for this one -->
+    <!--/record>
+    <record id="course2" model="openacademy.course">
+        <field name="name">Course 2</field>
+        <field name="description">Course 2's description</field>
+        
+    </record-->
+    
+</odoo>
