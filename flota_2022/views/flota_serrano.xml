@@ -28,5 +28,5 @@
         </field>
     </record>
 
-    <menuitem id="flota_menu" name="Flota" parent="flotaserrano_menu" action="flota_serrano_action"/-->
+    <menuitem id="flota_menu" name="Flota" parent="flotaserrano_menu" action="flota_serrano_action"/>
 </odoo>
