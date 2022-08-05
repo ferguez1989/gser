@@ -8,10 +8,8 @@
           <field name="partner_id" position="after">
             <field name="marca"/>
             <field name="modelo"/>
-            <field name="conductor"/>
             <field name="km"/>
             <field name="rendimiento" readonly="1"/>
-            <field name="disel"/>
           </field>
         </field>
     </record>

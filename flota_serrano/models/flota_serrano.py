@@ -5,15 +5,3 @@ class FlotaSerrano(models.Model):
     modelo = fields.Char(string="Modelo",)
     km = fields.Float(string="Kilometraje")
     rendimiento = fields.Float(default=2.2,string="Rendimiento",)
-    disel = fields.Float(compute='_compute_disel',)
-
-    @api.depends("km", "rendimiento")
-    def _compute_disel(self):
-        for record in self:
-            record.disel = record.km / record.rendimiento
-    
-    conductor = fields.Many2one(
-        comodel_name='hr.employee',
-        ondelete='set null',
-        index=True,
-    )
