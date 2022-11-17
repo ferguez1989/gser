@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="datosempleados_view_form" model="ir.ui.view">
+        <field name="name">datosempleados.view.form</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"></field>
+        <field name="arch" type="xml">
+        
+          <!--page name="public" position="after">
+            <group string="Documentación">
+              <group>
+                <group string="Documentación Personal">
+                  <field name="acta_nacimiento"/>
+                  <field name="domicilio"/>
+                  <field name="estudios"/>
+                  <field name="curp"/>
+                  <field name="rfc"/>
+                  <field name="ine"/>
+                </group>
+
+                <group string="Seguro">
+                  <field name="nseguridad_social" />
+                  <field name="alta_patronal"/>
+                  <field name="alta_imss"/>
+                  <field name="infonavit"/>
+                </group>
+
+                <group string="Contratos">
+                  <field name="empleado_fecha_ingreso"/>
+                  <field name="empleado_contrato"/>
+                  <field name="empleado_reglamento"/>
+                  <field name="empleado_codigo_etica"/>
+                  <field name="empleado_baja_fecha"/>
+                  <field name="empleado_baja"/>
+                  <field name="empleado_motivo_baja"/>
+                  <field name="no_antesedentes"/>
+                  <field name="recomendacion1"/>
+                  <field name="recomendacion2"/>
+                </group>
+                <group string="Vehículo">
+                  <field name="licencia"/>
+                  <field name="vigencia"/>
+                  <field name="chofer_examen"/>
+                  <field name="vigencia_exam"/>
+                </group>
+                <group string="Responsibas">
+                  <field name="res_unidad"/>
+                  <field name="res_llave_caseta"/>
+                  <field name="res_llave_diesel"/>
+                  <field name="res_telefono"/>
+                  <field name="res_equipo"/>
+                  <field name="res_resguardo1"/>
+                  <field name="res_resguardo2"/>
+                </group>
+              </group>
+            </group>
+          </page-->
+        </field>
+    </record>
+</odoo>	
