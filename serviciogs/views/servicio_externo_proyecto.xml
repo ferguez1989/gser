@@ -5,19 +5,15 @@
         <field name="model">project.task</field>
         <field name="inherit_id" ref="project.view_task_form2"></field>
         <field name="arch" type="xml">
-          
           <!--field name="project_id" position="attributes">
             <attribute value="default">1</attribute>
           </field-->
-
           <field name="user_ids" position="attributes">
                 <attribute name="invisible">1</attribute>
           </field>
-
           <field name="partner_id" position="replace">
               <field name="partner_id" value="default"></field>
           </field>
-
           <field name="user_ids" position="after">
             <field name="estatus_viaje"/>
             <field name="tipo_ruta_viaje" readonly ="1" />
@@ -37,23 +33,18 @@
             <field name="km_viaje" readonly ="1"/>
             <field name="carga_combustible"/>  
           </field>
-
           <field name="sale_line_id" position="replace">
             <field name="sale_line_id" invisible="1"></field>
           </field>
-
           <field name="tag_ids" position="replace">
             <field name="tag_ids" invisible="1"></field>
           </field>
-
           <field name="partner_phone" position="after">
             <field name="pmanager"></field>
           </field>
-
             <page name="description_page" position="after">
             <group string="Facturacion y Cobranza">
               <group>
-
                 <group string="">
                   <field name="cantidad"/>           
                   <field name="precio_ruta_litro" readonly="1"/>
@@ -61,58 +52,46 @@
                   <field name="iva" readonly="1"/>
                   <field name="retencion" readonly="1"/>
                   <field name="total_facturar" readonly="1"/>
-                </group> 
-
+                </group>
                 <group string="">
                   <field name="forma_pago"/>           
                   <field name="no_factura"/>
                   <field name="fecha_factura"/>
                   <field name="fecha_pago"/>
-                </group> 
-
+                </group>
               </group>
             </group>
           </page>
         </field>
-    </record> 
-
+    </record>
     <record id="project_task_tree_fsm" model="ir.ui.view">
       <field name="name">project.task.tree.fsm</field>
       <field name="model">project.task</field>
       <field name="inherit_id" ref="industry_fsm.project_task_view_list_fsm"/>
       <field name="arch" type="xml">
-      
         <!--campos ocultos de la vista task-->
         <field name="user_ids" position="replace">
           <field name="user_ids" invisible="1" optional="hide"/>
         </field>
-
         <field name="planned_date_end" position="replace">
           <field name="planned_date_end" invisible="1" optional="hide"/>
         </field>
-
         <field name="planned_date_begin" position="replace">
           <field name="planned_date_begin" invisible="1" optional="hide"/>
         </field>
-
         <field name="activity_ids" position="replace">
           <field name="activity_ids" invisible="1" optional="hide"/>
         </field>
-
         <field name="tag_ids" position="replace">
           <field name="tag_ids" invisible="1" optional="hide"/>
         </field>
-
         <field name="name" position="replace">
           <field name="name" invisible="1" optional="hide"/>
         </field>
-
-        <!--posisionamiento de los campos-->
         <field name="name" position="before">
           <field name="partner_id" optional="show"/>
           <field name="id" optional="show"/>
         </field>
-
         <field name="project_id" position="after">
           <field name="estatus_viaje" optional="show"/>
           <field name="create_date" optional="show"/>
@@ -124,7 +103,6 @@
           <field name="total_facturar" optional="show" sum="Sum of gasto_total_caseta_viaje"/>
           <field name="no_factura" optional="show"/>
         </field>
-        
-      </field>  
+      </field>
     </record>
 </odoo>
