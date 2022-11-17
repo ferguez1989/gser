@@ -24,6 +24,7 @@
             <field name="vigencia_emisiones"/>
             <field name="file_circulacion"/>
             <field name="file_factura"/>
+            <field name="file_otro"/>
       </field>
     </field>
   </record>
