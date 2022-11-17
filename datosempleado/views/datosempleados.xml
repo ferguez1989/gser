@@ -5,8 +5,7 @@
         <field name="model">hr.employee</field>
         <field name="inherit_id" ref="hr.view_employee_form"></field>
         <field name="arch" type="xml">
-        
-          <!--page name="public" position="after">
+          <page name="public" position="after">
             <group string="Documentación">
               <group>
                 <group string="Documentación Personal">
@@ -54,7 +53,7 @@
                 </group>
               </group>
             </group>
-          </page-->
+          </page>
         </field>
     </record>
 </odoo>	

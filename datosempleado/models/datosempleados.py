@@ -3,7 +3,7 @@ from odoo import fields, models
 class datosEmpleados (models.Model):
     _inherit="hr.employee"
     #Documentacion personal
-    """acta_nacimiento = fields.Binary(
+    acta_nacimiento = fields.Binary(
         string="Acta de Nacimiento",
     )
     domicilio = fields.Binary(
@@ -99,4 +99,4 @@ class datosEmpleados (models.Model):
     )
     res_resguardo2 = fields.Binary(
         string="Resguardo 2",
-    )"""
+    )

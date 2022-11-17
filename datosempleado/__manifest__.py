@@ -13,6 +13,6 @@
         # demo
         # reports
         # views
-        #'views/datosempleados.xml',
+        'views/datosempleados.xml',
     ],
 }
