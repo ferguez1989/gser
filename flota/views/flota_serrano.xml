@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <record id="flota_serrano_view_form" model="ir.ui.view">
+    <field name="name">flota.serrano.view.form</field>
+    <field name="model">fleet.vehicle</field>
+    <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"></field>
+    <field name="arch" type="xml">
+      <field name="location" position="after">
+        <field name="tipo_vehiculo"/>
+        <field name="no_economico"/>
+      </field>
+      <!--Seccion de motor-->
+      <field name="co2_standard" position="after">
+        <field name="capacidad_tanque"/>
+      </field>
+      <!--Seccion de modelo-->
+      <field name="color" position="after">
+            <field name="numero_poliza"/>
+            <field name="file_poliza"/> 
+            <field name="vigencia_poliza"/>
+            <field name="file_fisico_mecanico"/>
+            <field name="vigencia_fisico_mecanico"/>
+            <field name="file_emisiones"/>
+            <field name="vigencia_emisiones"/>
+            <field name="file_circulacion"/>
+            <field name="file_factura"/>
+      </field>
+    </field>
+  </record>
+</odoo>
