@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <template id="report_inspeccion_trans">
+    <t t-call="web.html_container">
+      <t t-set="data_report_margin_top" t-value="12"/>
+      <t t-set="data_report_header_spacing" t-value="0"/>
+      <t t-set="data_report_dpi" t-value="110"/>
+        <t t-foreach="docs" t-as="o">
+            <t t-call="web.external_layout">
+                <div class="page">
+                 <div class="row">
+                    <div class="col-sm-12">
+                      <div class="row">
+                          <div class="col-4 text-center"><img t-att-src="image_data_uri(o.company_id.logo)" width="120px" height="100px"/></div>
+                          <div class="col-4 text-center font-weight-bold">
+                            <span t-field="o.company_id.name"/><br/>
+                            <span t-field="o.company_id.street"/>, 
+                            <span t-field="o.company_id.zip"/>, 
+                            <span t-field="o.company_id.city"/>, 
+                            <span t-field="o.company_id.state_id"/>, 
+                            <span t-field="o.company_id.country_id"/><br/>
+                            <span t-field="o.company_id.phone"/><br/>
+                            <span t-field="o.company_id.email"/>
+                          </div>
+                          <div class="col-4 text-center"><img t-att-src="image_data_uri(o.company_id.logo)" width="120px" height="100px"/></div>
+                      </div>
+                      <div class="row">
+                          <div class="col-4 text-center"><img t-att-src="'/report/barcode/QR/'+str(o.id)" style="width:70px;height:70px" alt="Barcode"/></div>
+                          <div class="col-4"></div>
+                          <div class="col-4 text-center font-weight-bold" style="color:red; font-size:20px;">Folio:<br/><span t-field="o.id"/></div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div style="border-bottom: 15px solid black;"></div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-12" style="background-color:#6c757d;"><h2 class="text-white">Inspección de transporte</h2></div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div style="border-bottom: 15px solid black;"></div>
+                    </div>
+                  </div>
+
+                  
+                    <div class="row">
+                        <div class="col-2">
+                          <h5>Fecha:</h5>
+                          <h5>Producto:</h5>
+                          <h5>Tanque 1:</h5>
+                          <h5>Tanque 2:</h5>
+                          <h5>Operador:</h5>
+                        </div>
+                        <div class="col-4">
+                          <h5><span class="font-weight-bold" t-field="o.create_date"/></h5>
+                          <h5><span class="font-weight-bold" t-field="o.producto_viaje"/></h5>
+                          <h5><span class="font-weight-bold" t-field="o.r1_no_economico"/></h5>
+                          <h5><span class="font-weight-bold" t-field="o.r1_no_economico"/></h5>
+                          <h5><span class="font-weight-bold" t-field="o.conductor"/></h5>
+                        </div>
+                        <div class="col-6">
+                          <h5><br/></h5>
+                          <h5><br/></h5>
+                          <h5>Placas: <span class="font-weight-bold" t-field="o.remolque_1.license_plate"/><br/></h5>
+                          <h5>Placas: <span class="font-weight-bold" t-field="o.remolque_1.license_plate"/><br/></h5>
+                          <h5><br/></h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div style="border-bottom: 30px solid black; background-color:#6c757d;"></div>
+                        </div>
+                    </div>
+                    <div class="row">    
+                        <div class="col-12">
+                          <h5>1.-Pisos, techos y paredes sin perforaciones y/o roturas.</h5>
+                          <h5>Si [ &#160;&#160;&#160;&#160;]&#160;&#160;&#160; No [&#160;&#160;&#160;&#160;]</h5><br/>
+                          <h5>2.-Puerta con cierre hermético.</h5>
+                          <h5>Si [ &#160;&#160;&#160;&#160;]&#160;&#160;&#160; No [ &#160;&#160;&#160;&#160;]</h5><br/>
+                          <h5>3.-Libre de basura.</h5>
+                          <h5>Si [ &#160;&#160;&#160;&#160;]&#160;&#160;&#160; No [ &#160;&#160;&#160;&#160;]</h5><br/>
+                          <h5>4.-Sin residuos de alimentos.</h5>
+                          <h5>Si [ &#160;&#160;&#160;&#160;]&#160;&#160;&#160; No [ &#160;&#160;&#160;&#160;]</h5><br/>
+                          <h5>5.-Libre de olores.</h5>
+                          <h5>Si [ &#160;&#160;&#160;&#160;]&#160;&#160;&#160; No [ &#160;&#160;&#160;&#160;]</h5><br/>
+                          <h5>6.-Sin agua estancada.</h5>
+                          <h5>Si [ &#160;&#160;&#160;&#160;]&#160;&#160;&#160; No [ &#160;&#160;&#160;&#160;]</h5><br/>
+                          <h5>7.-Libre de fauna nociva.</h5>
+                          <h5>Si [ &#160;&#160;&#160;&#160;]&#160;&#160;&#160; No [ &#160;&#160;&#160;&#160;]</h5><br/>
+                       <br/>
+                          
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div style="border-bottom: 30px solid black;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div style="border-bottom: 30px solid black;"></div>
+                        </div>
+                    </div>
+                   
+                    <div class="row  font-weight-bold">
+                        <div class="col-12 text-center">
+                            <h5>__________________________________</h5><br/>
+                        </div>
+                    </div>
+                    <div class="row  font-weight-bold">
+                        <div class="col-12 text-center">
+                            <h5>Firma del supervisor</h5>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </t>
+  </template>
+</odoo>
+
+
+

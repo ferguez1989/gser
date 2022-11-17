@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <template id="report_proceso_lavado">
+    <t t-call="web.html_container">
+      <t t-set="data_report_margin_top" t-value="12"/>
+      <t t-set="data_report_header_spacing" t-value="0"/>
+      <t t-set="data_report_dpi" t-value="110"/>
+        <t t-foreach="docs" t-as="o">
+            <t t-call="web.external_layout">
+                <div class="page">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="row">
+                          <div class="col-4 text-center"><img t-att-src="image_data_uri(o.company_id.logo)" width="120px" height="100px"/></div>
+                          <div class="col-4 text-center font-weight-bold">
+                            <span t-field="o.company_id.name"/><br/>
+                            <span t-field="o.company_id.street"/>, 
+                            <span t-field="o.company_id.zip"/>, 
+                            <span t-field="o.company_id.city"/>, 
+                            <span t-field="o.company_id.state_id"/>, 
+                            <span t-field="o.company_id.country_id"/><br/>
+                            <span t-field="o.company_id.phone"/><br/>
+                            <span t-field="o.company_id.email"/>
+                          </div>
+                          <div class="col-4 text-center"><img t-att-src="image_data_uri(o.company_id.logo)" width="120px" height="100px"/></div>
+                      </div>
+                      <div class="row">
+                          <div class="col-4 text-center"><img t-att-src="'/report/barcode/QR/'+str(o.id)" style="width:70px;height:70px" alt="Barcode"/></div>
+                          <div class="col-4"></div>
+                          <div class="col-4 text-center font-weight-bold" style="color:red; font-size:20px;">Folio:<br/><span t-field="o.id"/></div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div style="border-bottom: 15px solid black;"></div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-12" style="background-color:#6c757d;"><h2 class="text-white">Proceso de lavado</h2></div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div style="border-bottom: 15px solid black;"></div>
+                    </div>
+                  </div>
+
+                  
+                    <div class="row">
+                        <div class="col-12">
+                          <h5>Este Certificado ampara el lavado del tanque No.<span class="font-weight-bold" t-field="o.r1_no_economico"/> y el cual fue realizado en nuestras 
+                          instalaciones el día <span class="font-weight-bold" t-field="o.create_date"/> con el siguiente proceso de lavado.</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div style="border-bottom: 30px solid black;"></div>
+                        </div>
+                    </div>
+                    <div class="row">    
+                        <div class="col-12">
+                          <h5>1.-Ingreso del tanque a nuestras instalaciones.</h5>
+                          <h5>2.-Lavado de tapa y la cubierta.</h5>
+                          <h5>3.-Desarmar y lavar válvula de descarga, tapón, bote y empaque.</h5>
+                          <h5>4.-Enjuague con agua a una temperatura de 35° a 40° centígrados.</h5>
+                          <h5>5.-Lavado de alcalino a una temperatura de 60° a 68° centígrados.</h5>
+                          <h5>6.-Enjuague de alcalino a base de agua a temperatura ambiente.</h5>
+                          <h5>7.-Enjuague con ácido sanitizánte a base de agua.</h5>
+                          <h5>8.-Salida del tanque de las instalaciones.</h5>
+                       <br/>
+                          <h5>Este proceso tiene una duración de 45 minutos aproximadamente y se divide de la siguiente manera:</h5>
+                       <br/>
+                          <h5>1.-28 Minutos - ciclo de lavado CIP.</h5>
+                          <h5>2.-17 Minutos para el ingreso y conexión de mangueras y enjuagues.</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div style="border-bottom: 30px solid black;"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                          <div class="col-6"><h5>No. Placas:  </h5><span class="font-weight-normal" t-field="o.remolque_1.license_plate"/></div>
+                          <div class="col-6"><h5>No. Sellos: ________________</h5></div>
+                    
+                    </div>
+                    <div class="row">
+                          <div class="col-6"><h5>No. Placas: </h5><span class="font-weight-normal" t-field="o.remolque_2.license_plate"/></div>
+                          <div class="col-6"><h5>No. Sellos: ________________</h5></div>
+                                           
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div style="border-bottom: 30px solid black;"></div>
+                        </div>
+                    </div>
+                        
+                    <div class="row  font-weight-bold">
+                        <div class="col-12" style="background-color:#dee2e6;"><h5>Observaciones:</h5><!--span class="font-weight-normal" t-field="o.carga_viaje"/--></div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div style="border-bottom: 30px solid black;"></div>
+                        </div>
+                    </div>
+
+                    <div class="row  font-weight-bold">
+                        <div class="col-12 text-center">
+                            <h5>______________________</h5>
+                        </div>
+                    </div>
+                    <div class="row  font-weight-bold">
+                        <div class="col-12 text-center">
+                            <h5>Firma del supervisor</h5>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </t>
+  </template>
+</odoo>
+
+
+

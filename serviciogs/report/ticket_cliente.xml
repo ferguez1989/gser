@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <template id="report_ticket_cliente">
+    <t t-call="web.html_container">
+      <t t-set="data_report_margin_top" t-value="12"/>
+      <t t-set="data_report_header_spacing" t-value="0"/>
+      <t t-set="data_report_dpi" t-value="110"/>
+        <t t-foreach="docs" t-as="o">
+            <t t-call="web.external_layout">
+                <div class="page">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="row">
+                          <div class="col-4 text-center"><img t-att-src="image_data_uri(o.company_id.logo)" width="120px" height="100px"/></div>
+                          <div class="col-4 text-center font-weight-bold">
+                            <span t-field="o.company_id.name"/><br/>
+                            <span t-field="o.company_id.street"/>, 
+                            <span t-field="o.company_id.zip"/>, 
+                            <span t-field="o.company_id.city"/>, 
+                            <span t-field="o.company_id.state_id"/>, 
+                            <span t-field="o.company_id.country_id"/><br/>
+                            <span t-field="o.company_id.phone"/><br/>
+                            <span t-field="o.company_id.email"/>
+                          </div>
+                          <div class="col-4 text-center"><img t-att-src="image_data_uri(o.company_id.logo)" width="120px" height="100px"/></div>
+                      </div>
+                      <div class="row">
+                          <div class="col-4 text-center"><img t-att-src="'/report/barcode/QR/'+str(o.id)" style="width:70px;height:70px" alt="Barcode"/></div>
+                          <div class="col-4"></div>
+                          <div class="col-4 text-center font-weight-bold" style="color:red; font-size:20px;">Folio:<br/><span t-field="o.id"/></div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div style="border-bottom: 15px solid black;"></div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12" style="background-color:#6c757d;"><h2 class="text-white">Información del viaje</h2></div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div style="border-bottom: 15px solid black;"></div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-12" >
+                      <div class="row font-weight-bold">
+                          <div class="col-4" style="background-color:#dee2e6;">Tipo de vehículo:<br/><span class="font-weight-normal" t-field="o.vehiculo.tipo_vehiculo"/></div>
+                          <div class="col-4">Asignado por:<br/><span class="font-weight-normal" t-field="o.pmanager"/></div>
+                          <div class="col-4" style="background-color:#dee2e6;">Cliente:<br/><span class="font-weight-normal" t-field="o.project_id.partner_id"/></div>
+                      </div>
+                      <div class="row">
+                      <div class="col-xs-12">
+                          <div style="border-bottom: 10px solid black;"></div>
+                          </div>
+                      </div>
+                      <div class="row  font-weight-bold">
+                          <div class="col-4" style="background-color:#dee2e6;">Carga:<br/><span class="font-weight-normal" t-field="o.carga_viaje"/></div>
+                          <div class="col-4">Correo electrónico:<br/><span class="font-weight-normal" t-field="o.pmanager.email"/></div>
+                          <div class="col-4" style="background-color:#dee2e6;">Dirección:<br/><span class="font-weight-normal" t-field="o.project_id.partner_id.street"/></div>
+                      </div>
+                      <div class="row">
+                      <div class="col-xs-12">
+                          <div style="border-bottom: 10px solid black;"></div>
+                          </div>
+                      </div>
+                      <div class="row font-weight-bold">
+                          <div class="col-4" style="background-color:#dee2e6;">Capacidad:<br/><span class="font-weight-normal" t-field="o.capacidad_viaje"/></div>
+                          <div class="col-4">Teléfono:<br/><span class="font-weight-normal" t-field="o.pmanager.phone"/></div>
+                          <div class="col-4" style="background-color:#dee2e6;">Ciudad:<br/><span class="font-weight-normal" t-field="o.project_id.partner_id.city"/></div>
+                      </div>
+                      <div class="row">
+                      <div class="col-xs-12">
+                          <div style="border-bottom: 10px solid black;"></div>
+                          </div>
+                      </div>
+                      <div class="row font-weight-bold">
+                          <div class="col-4" style="background-color:#dee2e6;">Producto:<br/><span class="font-weight-normal" t-field="o.producto_viaje"/></div>
+                          <div class="col-4"></div>
+                          <div class="col-4" style="background-color:#dee2e6;">Estado:<br/><span class="font-weight-normal" t-field="o.project_id.partner_id.state_id"/></div>
+                      </div>
+                      <div class="row">
+                      <div class="col-xs-12">
+                          <div style="border-bottom: 10px solid black;"></div>
+                          </div>
+                      </div>
+                      <div class="row font-weight-bold">
+                          <div class="col-4 " style="background-color:#dee2e6;">Matrícula:<br/><span class="font-weight-normal" t-esc="'%s: %s'% (o.vehiculo.license_plate, o.vehiculo.no_economico)"/></div>
+                          <div class="col-4"></div>
+                          <div class="col-4 " style="background-color:#dee2e6;">Teléfono:<br/><span class="font-weight-normal" t-field="o.project_id.partner_id.phone"/></div>
+                      </div>
+                      <div class="row">
+                      <div class="col-xs-12">
+                          <div style="border-bottom: 10px solid black;"></div>
+                          </div>
+                      </div>
+                      <div class="row font-weight-bold">
+                          <div class="col-4 " style="background-color:#dee2e6;">Conductor:<br/><span class="font-weight-normal" t-field="o.conductor"/></div>
+                          <div class="col-4"></div>
+                          <div class="col-4 " style="background-color:#dee2e6;">Correo electrónico:<br/><span class="font-weight-normal" t-field="o.project_id.partner_id.email"/></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div style="border-bottom: 15px solid black;"></div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12" style="background-color:#6c757d;"><h2 class="text-white">Información de ruta</h2></div>
+                  </div>
+                 <div class="row">
+                    <div class="col-xs-12">
+                      <div style="border-bottom: 15px solid black;"></div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="row font-weight-bold">
+                          <div class="col-3" style="background-color:#dee2e6;">Dirección origen:<br/><span class="font-weight-normal" t-field="o.project_id.direccion_origen"/></div>
+                          <div class="col-3" style="background-color:#dee2e6;">Ciudad:<br/><span class="font-weight-normal" t-field="o.project_id.ciudad_origen"/></div>
+                          <div class="col-3" style="background-color:#dee2e6;">Estado:<br/><span class="font-weight-normal" t-field="o.project_id.estado_origen"/></div>
+                          <div class="col-3" style="background-color:#dee2e6;">País:<br/><span class="font-weight-normal" t-field="o.project_id.pais_origen"/></div>
+                      </div>
+                      <div class="row">
+                      <div class="col-xs-12">
+                          <div style="border-bottom: 10px solid black;"></div>
+                          </div>
+                      </div>
+                      <div class="row font-weight-bold">
+                          <div class="col-3" style="background-color:#dee2e6;">Dirección destino:<br/><span class="font-weight-normal" t-field="o.project_id.direccion_destino"/></div>
+                          <div class="col-3" style="background-color:#dee2e6;">Ciudad:<br/><span class="font-weight-normal" t-field="o.project_id.ciudad_destino"/></div>
+                          <div class="col-3" style="background-color:#dee2e6;">Estado:<br/><span class="font-weight-normal" t-field="o.project_id.estado_destino"/></div>
+                          <div class="col-3" style="background-color:#dee2e6;">País:<br/><span class="font-weight-normal" t-field="o.project_id.pais_destino"/></div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div style="border-bottom: 15px solid black;"></div>
+                    </div>
+                  </div>
+                  <!--div class="row">
+                    <div class="col-12" style="background-color:#6c757d;"><h2 class="text-white">Información de transferencia</h2></div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div style="border-bottom: 15px solid black;"></div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="row font-weight-bold">
+                          <div class="col-4 text-center" style="background-color:#dee2e6;">Banamex</div>
+                          <div class="col-4 text-center">Bancomer</div>
+                          <div class="col-4 text-center" style="background-color:#dee2e6;">BanBajio</div>
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-12">
+                          <div style="border-bottom: 10px solid black;"></div>
+                        </div>
+                      </div>
+                      <div class="row font-weight-bold">
+                          <div class="col-4 text-center">Clave Interbancaria:</div>
+                          <div class="col-4 text-center">Clave Interbancaria:</div>
+                          <div class="col-4 text-center">Clave Interbancaria:</div>
+                      </div>
+                      <div class="row font-weight-bold">
+                          <div class="col-4 text-center">No. Cuenta:</div>
+                          <div class="col-4 text-center">No. Cuenta:</div>
+                          <div class="col-4 text-center">No. Cuenta:</div>
+                      </div>
+                      
+                      <div class="row">
+                          <div class="col-12 text-center"><small>El número del folio debe relacionarse a la transferencia</small></div>
+                      </div>
+                    </div>
+                  </div-->
+                </div>
+            </t>
+        </t>
+    </t>
+  </template>
+</odoo>
+
+
+

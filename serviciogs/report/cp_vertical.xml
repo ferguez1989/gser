@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <template id="report_cp_vertical">
+    <t t-call="web.html_container">
+      <t t-set="data_report_margin_top" t-value="12"/>
+      <t t-set="data_report_header_spacing" t-value="0"/>
+      <t t-set="data_report_margin_bottom" t-value="12"/>
+      <t t-set="data_report_footer_spacing" t-value="0"/>
+      <t t-set="data_report_dpi" t-value="110"/>
+        <t t-foreach="docs" t-as="o">
+            <t t-call="web.external_layout">
+                <div class="page">
+                 <div class="row">
+                    <div class="col-sm-12">
+                      <div class="row">
+                          <div class="col-4 text-center"><img t-att-src="image_data_uri(o.company_id.logo)" width="120px" height="100px"/></div>
+                          <div class="col-4 text-center font-weight-bold">
+                            <span t-field="o.company_id.name"/><br/>
+                            <span t-field="o.company_id.street"/>, 
+                            <span t-field="o.company_id.zip"/>, 
+                            <span t-field="o.company_id.city"/>, 
+                            <span t-field="o.company_id.state_id"/>, 
+                            <span t-field="o.company_id.country_id"/><br/>
+                            <span t-field="o.company_id.phone"/><br/>
+                            <span t-field="o.company_id.email"/>
+                          </div>
+                          <div class="col-4 text-center"><img t-att-src="'/report/barcode/QR/'+str(o.id)" style="width:70px;height:70px" alt="Barcode"/></div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  
+                  <div class="row"><div class="col-xs-12"><div style="border-bottom: 15px solid black;"></div></div></div>
+
+                  <div class="row">
+                    <div class="col-12"><h2 class="text-black text-center">CARTA PORTE</h2></div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-10">
+                      <div><h6 class="text-black">LUGAR Y FECHA DE EXPEDICIÓN<br/>Lagos de Moreno, Jalisco &#160;&#160; <span t-field="o.create_date"/></h6></div>
+                    </div>
+                    <div class="col-2">
+                      <div><h6 class="text-black text-right">CARTA PORTE<br/><span t-field="o.id"/></h6></div>
+                    </div>
+                  </div>
+                  <div class="row"><div class="col-xs-12"><div style="border-bottom: 15px solid black;"></div></div></div>
+
+                  <div class="row">
+                      <div class="col-12 text-center">
+                        <h5>TRANSPORTE DE CARGA EN GENERAL, RED DE CAMINOS DE JURISDICCIÓN FEDERAL, ESTATAL Y CAMINOS VECINALES.</h5>
+                      </div>
+                  </div>
+                   <div class="row"><div class="col-xs-12"><div style="border-bottom: 15px solid black;"></div></div></div>
+                  <div class="row">
+                    <div class="col-12" style="background-color:#6c757d;"><h2 class="text-white">INFORMACIÓN DE REMITENTE</h2></div>
+                  </div>
+                  <div class="row"><div class="col-xs-12"><div style="border-bottom: 15px solid black;"></div></div></div>
+
+                  <div class="row">
+                    <div class="col-12" >
+                      <div class="row font-weight-bold">
+                          <div class="col-4" style="background-color:#dee2e6;">RFC REMITENTE<br/><!--span class="font-weight-normal" t-field="o.vehiculo.tipo_vehiculo"/--> </div>
+                          <div class="col-4" style="background-color:#dee2e6;">NOMBRE DEL REMITENTE<br/><span class="font-weight-normal" t-field="o.company_id.name"/></div>
+                          <div class="col-4" style="background-color:#dee2e6;"><br/></div>
+                      </div>
+                    </div>
+                  </div>
+                   <div class="row"><div class="col-xs-12"><div style="border-bottom: 5px solid black;"></div></div></div>
+                  <div class="row">
+                    <div class="col-12" >
+                      <div class="row font-weight-bold">
+                          <div class="col-4" style="background-color:#dee2e6;">DIRECCIÓN ORIGEN<br/><span class="font-weight-normal" t-esc="'%s: %s'% (o.company_id.street, o.company_id.zip)"/></div>
+                          <div class="col-4" style="background-color:#dee2e6;">CIUDAD ORIGEN<br/><span class="font-weight-normal" t-field="o.company_id.city"/></div>
+                          <div class="col-4" style="background-color:#dee2e6;">ESTADO ORIGEN<br/><span class="font-weight-normal" t-field="o.company_id.state_id"/></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row"><div class="col-xs-12"><div style="border-bottom: 15px solid black;"></div></div></div>
+
+                  <div class="row">
+                    <div class="col-12" style="background-color:#6c757d;"><h2 class="text-white">INFORMACIÓN DE DESTINATARIO</h2></div>
+                  </div>
+                  <div class="row"><div class="col-xs-12"><div style="border-bottom: 15px solid black;"></div></div></div>
+
+                  <div class="row">
+                    <div class="col-sm-12" >
+                      <div class="row font-weight-bold">
+                          <div class="col-4" style="background-color:#dee2e6;">RFC DESTINATARIO<br/><!--span class="font-weight-normal" t-field="o.vehiculo.tipo_vehiculo"/--> </div>
+                          <div class="col-4" style="background-color:#dee2e6;">NOMBRE DEL DESTINATARIO<br/><span class="font-weight-normal" t-field="o.partner_id"/></div>
+                          <div class="col-4" style="background-color:#dee2e6;"><br/></div>
+                      </div>
+                    </div>
+                  </div>
+                   <div class="row"><div class="col-xs-12"><div style="border-bottom: 5px solid black;"></div></div></div>
+                  <div class="row">
+                    <div class="col-sm-12" >
+                      <div class="row font-weight-bold">
+                          <div class="col-4" style="background-color:#dee2e6;">DIRECCIÓN DESTINO<br/><span class="font-weight-normal" t-esc="'%s: %s'% (o.partner_id.street, o.partner_id.zip)"/></div>
+                          <div class="col-4" style="background-color:#dee2e6;">CIUDAD DESTINO<br/><span class="font-weight-normal" t-field="o.partner_id.city"/></div>
+                          <div class="col-4" style="background-color:#dee2e6;">ESTADO DESTINO<br/><span class="font-weight-normal" t-field="o.partner_id.state_id"/></div>
+                      </div>
+                    </div>
+                  </div>
+
+                <div class="row"><div class="col-xs-12"><div style="border-bottom: 15px solid black;"></div></div></div>
+                
+                <div class="row">
+                  <div class="col-sm-12" >
+                    <div class="row font-weight-bold">
+                        <div class="col-3" style="background-color:#dee2e6;">VALOR DECLARADO<br/><!--span class="font-weight-normal" t-esc="'%s: %s'% (o.partner_id.street, o.partner_id.zip)"/--></div>
+                        <div class="col-3" style="background-color:#dee2e6;">FECHA DE ENTREGA<br/><!--span class="font-weight-normal" t-field="o.partner_id.city"/--></div>
+                        <div class="col-3" style="background-color:#dee2e6;">FRACCION NO<br/><!--span class="font-weight-normal" t-field="o.partner_id.state_id"/--></div>
+                        <div class="col-3" style="background-color:#dee2e6;">CLASE<br/><!--span class="font-weight-normal" t-field="o.partner_id.state_id"/--></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row"><div class="col-xs-12"><div style="border-bottom: 15px solid black;"></div></div></div>
+                <div class="row">
+                  <div class="col-12">
+                      <div class="text-center"><h5>DESCRIPCIÓN DE LAS MERCANCIAS</h5></div>
+                  </div>
+                </div>
+                <div class="row"><div class="col-xs-12"><div style="border-bottom: 15px solid black;"></div></div></div>
+                <div class="row">
+                  <div class="col-sm-12" >
+                    <div class="row font-weight-bold">
+                        <div class="col-4" style="background-color:#dee2e6;">CANTIDAD<br/><br/><span class="font-weight-normal" t-field="o.capacidad_viaje"/><br/></div>
+                        <div class="col-4" style="background-color:#dee2e6;">PRODUCTO<br/><br/><span class="font-weight-normal" t-field="o.producto_viaje"/><br/></div>
+                        <div class="col-4" style="background-color:#dee2e6;">PESO<br/><br/><br/></div>
+                    </div>
+                  </div>
+                </div>
+                 <div class="row">
+                  <div class="col-12">
+                      <div><small>*NOTA: EL PESO DEBERA SER LLENADO CON LETRA DE MOLDE, DE ACUERDO AL PESO DE BASCULA</small></div>
+                  </div>
+                </div>
+                <div class="row"><div class="col-xs-12"><div style="border-bottom: 15px solid black;"></div></div></div>
+                <div class="row">
+                  <div class="col-12">
+                      <div class ="text-right">¿TRANSPORTA MATERIAL PELIGROSO?  SI ( )  NO (  )</div>
+                  </div>
+                </div>
+                <div class="row"><div class="col-xs-12"><div style="border-bottom: 15px solid black;"></div></div></div>
+                <div class="row">
+                  <div class="col-sm-12" >
+                    <div class="row font-weight-bold">
+                        <div class="col-3" style="background-color:#dee2e6;">SEGURIDAD DE CARGA<br/><br/></div>
+                        <div class="col-3" style="background-color:#dee2e6;">MANIOBRAS<br/><br/></div>
+                        <div class="col-3" style="background-color:#dee2e6;">AUTOPISTAS<br/><br/></div>
+                        <div class="col-3" style="background-color:#dee2e6;">IMPORTE<br/><span class="font-weight-normal" t-field="o.precio_ruta_litro"/><br/></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row"><div class="col-xs-12"><div style="border-bottom: 15px solid black;"></div></div></div>
+                <div class="row">
+                  <div class="col-sm-12" >
+                    <div class="row font-weight-bold">
+                        <div class="col-9" style="background-color:#dee2e6;">OBSERVACIÓN<br/><br/></div>
+                        <div class="col-3" style="background-color:#e9ecef;">RETENCION 4%<br/><span class="font-weight-normal" t-field="o.retencion"/><br/></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12" >
+                    <div class="row font-weight-bold">
+                        <div class="col-9" style="background-color:#dee2e6;"><br/><br/></div>
+                        <div class="col-3" style="background-color:#e9ecef;">IVA 16%<br/><span class="font-weight-normal" t-field="o.iva"/><br/></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12" >
+                    <div class="row font-weight-bold">
+                        <div class="col-9" style="background-color:#dee2e6;"><br/><br/></div>
+                        <div class="col-3" style="background-color:#e9ecef;">TOTAL<br/><span class="font-weight-normal" t-field="o.total_facturar"/><br/></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row"><div class="col-xs-12"><div style="border-bottom: 15px solid black;"></div></div></div>
+                <div class="row">
+                  <div class="col-sm-12" >
+                    <div class="row font-weight-bold">
+                        <div class="col-6 text-center" style="background-color:#dee2e6;">AGENTE<br/><br/><br/><span class="font-weight-normal" t-field="o.pmanager"/><br/></div>
+                        <div class="col-6 text-center" style="background-color:#e9ecef;">RECIBI DE CONFORMIDAD<br/><br/><br/><span class="font-weight-normal" t-field="o.partner_id"/><br/></div>
+                    </div>
+                  </div>
+                </div>
+
+
+                </div>
+            </t>
+        </t>
+    </t>
+  </template>
+</odoo>
+
+
+

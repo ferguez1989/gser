@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <template id="report_ticket_viaje">
+    <t t-call="web.html_container">
+      <t t-set="data_report_margin_top" t-value="12"/>
+      <t t-set="data_report_header_spacing" t-value="0"/>
+      <t t-set="data_report_dpi" t-value="110"/>
+        <t t-foreach="docs" t-as="o">
+            <t t-call="web.external_layout">
+                <div class="page" style="max-width:100mm">
+                 <div class="row">
+                    <div class="col-12 text-center"><img t-att-src="image_data_uri(o.company_id.logo)" width="120px" height="100px"/></div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 text-center font-weight-bold">
+                        <span t-field="o.company_id.name"/><br/>
+                        <span t-field="o.company_id.street"/>, 
+                        <span t-field="o.company_id.zip"/>, 
+                        <span t-field="o.company_id.city"/>, 
+                        <span t-field="o.company_id.state_id"/>, 
+                        <span t-field="o.company_id.country_id"/><br/>
+                        <span t-field="o.company_id.phone"/><br/>
+                        <span t-field="o.company_id.email"/>
+                    </div>
+                  </div>
+                  
+                  <div class="row"><div class="col-xs-12"><div style="border-bottom: 15px solid black;"></div></div></div>
+                  <div class="row">
+                    <div class="col-9">
+                      <div><span t-field="o.create_date"/></div>
+                    </div>
+                    <div class="col-3">
+                      <div><h6 class="text-black text-right">FOLIO<br/><span t-field="o.id"/></h6></div>
+                    </div>
+                  </div>
+                  <div class="row"><div class="col-xs-12"><div style="border-bottom: 15px solid black;"></div></div></div>
+
+                  <div class="row">
+                    <div class="col-12 font-weight-bold" >
+                          <div>Cliente:<br/><span class="font-weight-normal" t-field="o.partner_id"/> </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 font-weight-bold" >
+                          <div>Conductor<br/><span class="font-weight-normal" t-field="o.conductor"/> </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 font-weight-bold" >
+                          <div>Ruta:<br/><span class="font-weight-normal" t-field="o.project_id"/> </div>
+                    </div>
+                  </div>
+                  <div class="row"><div class="col-xs-12"><div style="border-bottom: 5px solid black;"></div></div></div>
+                  <div class="row">
+                    <div class="col-12" >
+                      <div class="row font-weight-bold">
+                          <div class="col-3">Kilometros:<br/><span class="font-weight-normal" t-field="o.km_viaje"/></div>
+                          <div class="col-3">Diesel:<br/><span class="font-weight-normal" t-field="o.diesel_viaje"/></div>
+                          <div class="col-3">Casetas Efectivo:<br/><span class="font-weight-normal" t-field="o.gasto_total_caseta_viaje"/></div>
+                          <div class="col-3">Gasto total operador:<br/><span class="font-weight-normal" t-field="o.gasto_total_op_viaje"/></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row"><div class="col-xs-12"><div style="border-bottom: 15px solid black;"></div></div></div>
+
+                  <!--div class="row">
+                    <div class="col-12"><h6>Cobro de casetas</h6></div>
+                  </div>
+                  <div class="row"><div class="col-xs-12"><div style="border-bottom: 15px solid black;"></div></div></div>
+                  <div class="row">
+                    <div class="col-sm-12" >
+                      <div class="row font-weight-bold">
+                          <div class="col-3"><br/></div>
+                          <div class="col-3">Caseta:<br/></div>
+                          <div class="col-3">Fecha:<br/></div>
+                          <div class="col-3">Costos:<br/><span class="font-weight-normal" t-field="o.gasto_total_caseta_viaje"/></div>
+                      </div>
+                    </div>
+                  </div-->
+
+                  <div class="row"><div class="col-xs-12"><div style="border-bottom: 5px solid black;"></div></div></div>
+                  
+                  <div class="row texty-center">
+                    <div class="col-12"><h6>INFORMACIÓN DE RUTA</h6></div>
+                  </div>
+
+                  <div class="row"><div class="col-xs-12"><div style="border-bottom: 5px solid black;"></div></div></div>
+                  
+                  <div class="row">
+                    <div class="col-12 font-weight-bold" >
+                          <div>Origen<br/></div>
+                    </div>
+                  </div>   
+
+                  <div class="row"><div class="col-xs-12"><div style="border-bottom: 5px solid black;"></div></div></div>
+                  
+                  <div class="row">
+                    <div class="col-12" >
+                      <div class="row">
+                        <div class="col-6 font-weight-bold"><h6>Dirección: <br/><span class="font-weight-normal"  t-field="o.project_id.direccion_origen"/></h6></div>
+                        <div class="col-6 font-weight-bold"><h6>Ciudad<br/><span class="font-weight-normal" t-field="o.project_id.ciudad_origen"/></h6></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row"><div class="col-xs-12"><div style="border-bottom: 5px solid black;"></div></div></div>
+                  
+                   <div class="row">
+                    <div class="col-12 font-weight-bold" >
+                          <div>Destino<br/></div>
+                    </div>
+                  </div>            
+                  <div class="row"><div class="col-xs-12"><div style="border-bottom: 5px solid black;"></div></div></div>
+                  
+                  <div class="row">
+                    <div class="col-12" >
+                      <div class="row">
+                        <div class="col-6 font-weight-bold"><h6>Dirección: <br/><span class="font-weight-normal"  t-field="o.project_id.direccion_destino"/></h6></div>
+                        <div class="col-6 font-weight-bold"><h6>Ciudad<br/><span class="font-weight-normal" t-field="o.project_id.ciudad_destino"/></h6></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row"><div class="col-xs-12"><div style="border-bottom: 15px solid black;"></div></div></div>
+                  
+                  <div class="row text-center">
+                    <div class="col-12">
+                      <img t-att-src="'/report/barcode/QR/'+str(o.id)" style="width:80px;height:80px" alt="Barcode"/>
+                    </div>
+                  </div>
+                 
+                </div>
+            </t>
+        </t>
+    </t>
+  </template>
+</odoo>
+
+
+

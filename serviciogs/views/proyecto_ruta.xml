@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="proyecto_ruta_view_form" model="ir.ui.view">
+        <field name="name">proyecto_ruta.view.form</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"></field>
+        <field name="arch" type="xml">
+        <field name="partner_id" position="after">
+          <field name="contacto_facturacion" domain="[('parent_id', '=', partner_id)]"/>
+          <field name="email_facturacion"/> 
+          <field name="orden_venta" domain="[('partner_id', '=', partner_id), ('state', '=', 'sale')]"/>
+        </field>
+        
+         <page name="description" position="after">
+            <group string="Ruta">
+              <group>
+                <group string="Ruta">
+                  <field name="estatus_ruta"/>           
+                  <field name="km_ruta" required="1"/>
+                  <field name="carga_ruta" required="1"/>
+                  <field name="capacidad_ruta" required="1"/>
+                  <field name="ejes_ruta" required="1"/>
+                  <field name="producto_ruta" required="1"/>
+                </group>
+
+                <group string="Costos">
+                  <field name="tipo_precio"  required="1"/>
+                  <field name="precio"  required="1"/>
+                  <field name="precio_diesel"  required="1"/>
+                  <field name="rendimiento_diesel"  required="1"/>
+                  <field name="diesel" required="1"/>
+                  <field name="caseta_efectivo" required="1"/>
+                  <field name="caseta_llave" required="1"/>
+                  <field name="gastos_operador" required="1"/>
+                </group>
+                
+                <group string="Gastos Totales" required="1">
+                  <field name="gasto_total_operador" required="1"/>
+                  <field name="gasto_total" required="1"/>
+                </group>
+                
+                <group string="Origen">
+                  <field name="recoge_en_origen" required="1"/>
+                  <field name="direccion_origen" required="1"/>
+                  <field name="pais_origen" required="1"/>
+                  <field name="estado_origen" domain="[('country_id', '=', pais_origen)]" required="1"/>
+                  <field name="ciudad_origen" required="1"/>
+                  <!--falta completar la cidudad odoo enterprise-->
+                  <!--domain="[('country.state_id', '=', estado_origen)]"-->
+                </group>
+
+                <group string="Destino">
+                  <field name="entrega_destino" required="1"/>
+                  <field name="direccion_destino" required="1"/>
+                  <field name="pais_destino" required="1"/>
+                  <field name="estado_destino" domain="[('country_id', '=', pais_origen)]" required="1"/>
+                  <field name="ciudad_destino" required="1"/>
+                  <!--falta completar la cidudad odoo enterprise-->
+                  <!--domain="[('country.state_id', '=', estado_destino)]"-->
+                  
+                </group>
+
+              </group>
+            </group>
+          </page>
+                  
+        </field>
+    </record>
+</odoo>
