@@ -175,18 +175,15 @@ class proyecto_ruta (models.Model):
         #ondelete='set null',
         #index=True,
     )
-
     # Datos Computados para el calculo de gastos
     @api.depends("diesel", "precio_diesel","caseta_llave","gastos_operador","caseta_efectivo")
     def _compute_gastoT(self):
         for record in self:
             record.gasto_total = (record.diesel * record.precio_diesel) + record.caseta_llave + record.caseta_efectivo + record.gastos_operador
-
     @api.depends("caseta_efectivo", "gastos_operador")
     def _compute_gastoopera(self):
         for record in self:
             record.gasto_total_operador = record.caseta_efectivo + record.gastos_operador
-
     @api.depends("km_ruta", "rendimiento_diesel")
     def _compute_diesel(self):
         for record in self:
