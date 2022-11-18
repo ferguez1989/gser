@@ -101,7 +101,7 @@ class proyecto_ruta (models.Model):
         string="Precio Diesel",
     )
     rendimiento_diesel = fields.Float(
-        default=2.2,
+        compute='_compute_rendimiento'
         string="Rendimiento",
     )
     diesel = fields.Float(
