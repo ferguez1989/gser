@@ -5,21 +5,27 @@ class datosEmpleados (models.Model):
     #Documentacion personal
     acta_nacimiento = fields.Binary(
         string="Acta de Nacimiento",
+        groups="hr.group_hr_user",
     )
     domicilio = fields.Binary(
         string="Comp. Domicilio",
+        groups="hr.group_hr_user",
     )
     estudios = fields.Binary(
         string="Comp. Estudios",
+        groups="hr.group_hr_user",
     )
     curp = fields.Binary(
         string="CURP",
+        groups="hr.group_hr_user",
     )
     rfc = fields.Binary(
         string="RFC",
+        groups="hr.group_hr_user",
     )
     ine = fields.Binary(
         string="INE",
+        groups="hr.group_hr_user",
     )
     #Seguro
     nseguridad_social = fields.Char(
@@ -82,35 +88,46 @@ class datosEmpleados (models.Model):
     #Vehiculo
     licencia = fields.Binary(
         string="Licencia",
+        groups="hr.group_hr_user",
     )
     vigencia = fields.Date(
         string="Vigencia",
+        groups="hr.group_hr_user",
     )
     chofer_examen = fields.Binary(
         string="Examen de manejo",
+        groups="hr.group_hr_user",
     )
     vigencia_exam = fields.Date(
         string="Vigencia Examen",
+        groups="hr.group_hr_user",
     )
     #responsivas
     res_unidad = fields.Binary(
         string="Unidad",
+        groups="hr.group_hr_user",
     )
     res_llave_caseta = fields.Binary(
         string="Llave caseta",
+        groups="hr.group_hr_user",
     )
     res_llave_diesel = fields.Binary(
         string="Llave Diesel",
+        groups="hr.group_hr_user",
     )
     res_telefono = fields.Binary(
         string="Telefono",
+        groups="hr.group_hr_user",
     )
     res_equipo = fields.Binary(
         string="Equipo",
+        groups="hr.group_hr_user",
     )
     res_resguardo1 = fields.Binary(
         string="Resguardo 1",
+        groups="hr.group_hr_user",
     )
     res_resguardo2 = fields.Binary(
         string="Resguardo 2",
+        groups="hr.group_hr_user",
     )
