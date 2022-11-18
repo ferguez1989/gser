@@ -188,3 +188,11 @@ class proyecto_ruta (models.Model):
     def _compute_diesel(self):
         for record in self:
             record.diesel = record.km_ruta / record.rendimiento_diesel
+    
+    
+    @api.deoends("carga_ruta","rendimiento_diesel")
+    def _calculo_rendimeinto(self):
+        for record in self:
+            if record.carga_ruta == "Full":
+                record.rendimiento_diesel = 5.5
+            
