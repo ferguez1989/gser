@@ -33,9 +33,9 @@
             <field name="km_viaje" readonly ="1"/>
             <field name="carga_combustible"/>  
           </field>
-          <field name="sale_line_id" position="replace">
+          <!--field name="sale_line_id" position="replace">
             <field name="sale_line_id" invisible="1"></field>
-          </field>
+          </field-->
           <field name="tag_ids" position="replace">
             <field name="tag_ids" invisible="1"></field>
           </field>
