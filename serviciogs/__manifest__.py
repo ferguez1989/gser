@@ -5,8 +5,8 @@
     'website': '',
     'license': 'LGPL-3',
     'depends': [
-        "sale_management",
         "industry_fsm",
+        "sale_management",
         "project",
         "fleet",
     ],
