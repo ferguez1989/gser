@@ -24,46 +24,60 @@ class datosEmpleados (models.Model):
     #Seguro
     nseguridad_social = fields.Char(
         string="NSS",
+        groups="hr.group_hr_user",
     )
     alta_patronal = fields.Date(
         string="Fecha de alta patronal",
+        groups="hr.group_hr_user",
     )
     alta_imss = fields.Binary(
         string="Alta IMSS",
+        groups="hr.group_hr_user",
     )
     infonavit = fields.Binary(
         string="Comp. Infonavit",
+        groups="hr.group_hr_user",
     )
     #Contratos
     empleado_fecha_ingreso = fields.Date(
         string="Fecha de ingreso",
+        groups="hr.group_hr_user",
     )
     empleado_contrato = fields.Binary(
         string="Contrato",
+        groups="hr.group_hr_user",
     )
     empleado_reglamento = fields.Binary(
         string="Reglamento",
+        groups="hr.group_hr_user",
     )
     empleado_codigo_etica = fields.Binary(
         string="Codigo Etica",
+        groups="hr.group_hr_user",
     )
     empleado_baja_fecha = fields.Date(    
         string="Fecha Baja",
+        groups="hr.group_hr_user",
     )
     empleado_baja = fields.Binary(
         string="Baja",
+        groups="hr.group_hr_user",
     )
     empleado_motivo_baja = fields.Text(
         string="Motivo",
+        groups="hr.group_hr_user",
     )  
     no_antesedentes = fields.Binary(
         string="Carta Antecedentes",
+        groups="hr.group_hr_user",
     )   
     recomendacion1 = fields.Binary(
         string="Carta de recomendación 1",
+        groups="hr.group_hr_user",
     )
     recomendacion2 = fields.Binary(
         string="Carta de recomendación 2",
+        groups="hr.group_hr_user",
     )
     #Vehiculo
     licencia = fields.Binary(
