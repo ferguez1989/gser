@@ -35,14 +35,14 @@ class proyecto_ruta (models.Model):
         string="Kilometros",
     )
     carga_ruta = fields.Selection([
-        ('1','Full'),
-        ('2','Sencillo'),
-        ('3','Caja seca'),
-        ('4','Gondola'),
-        ('5','Plataforma'),
-        ('6','Torton'),
-        ('7','N/A'),
-        ('8','12'),],
+        ('Full'),
+        ('Sencillo'),
+        ('Caja seca'),
+        ('Gondola'),
+        ('Plataforma'),
+        ('Torton'),
+        ('N/A'),
+        ('12'),],
         string="Carga",
     )
     capacidad_ruta = fields.Selection([
@@ -186,7 +186,7 @@ class proyecto_ruta (models.Model):
     @api.depends("carga_ruta","rendimiento_diesel")
     def _calculo_rendimeinto(self):
         for record in self:
-            if record.carga_ruta == '1':
+            if record.carga_ruta == 'Full':
                 record.rendimiento_diesel = 5
             else:
                 record.rendimiento_diesel = 2.1
