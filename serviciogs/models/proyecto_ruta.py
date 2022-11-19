@@ -194,5 +194,5 @@ class proyecto_ruta (models.Model):
     def _calculo_rendimeinto(self):
         for record in self:
             if record.carga_ruta == "Full":
-                record.rendimiento_diesel = 5.5
+                record.rendimiento_diesel = '5'
             
