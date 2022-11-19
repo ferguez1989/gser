@@ -186,8 +186,8 @@ class proyecto_ruta (models.Model):
     @api.depends("carga_ruta","rendimiento_diesel")
     def _calculo_rendimeinto(self):
         for record in self:
-            if record.carga_ruta == "Full":
+            if record.carga_ruta == 'Full':
                 record.rendimiento_diesel = 5
             else:
-                record.rendimiento_diesel = 2.2
+                record.rendimiento_diesel = 2.1
             
