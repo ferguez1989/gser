@@ -30,10 +30,7 @@ class proyecto_ruta (models.Model):
         index=True,
         string="Orden de Venta",
     )
-    
-#Campos de la sección de Ruta.Ruta
-
-
+    #Campos de la sección de Ruta.Ruta
     km_ruta = fields.Float(
         string="Kilometros",
     )
@@ -84,7 +81,6 @@ class proyecto_ruta (models.Model):
         ('11','Otros'),],
         string="Producto",
     )
-
     tipo_precio = fields.Selection([
         ('1','Ruta'),
         ('2','Litro'),
@@ -92,7 +88,6 @@ class proyecto_ruta (models.Model):
         string="Tipo de precio",
         index = True,
     )
-   
     precio = fields.Float(
         string="Precio",
     )
@@ -188,11 +183,9 @@ class proyecto_ruta (models.Model):
     def _compute_diesel(self):
         for record in self:
             record.diesel = record.km_ruta / record.rendimiento_diesel
-    
-    
-    @api.deoends("carga_ruta","rendimiento_diesel")
+    @api.depends("carga_ruta","rendimiento_diesel")
     def _calculo_rendimeinto(self):
         for record in self:
             if record.carga_ruta == "Full":
-                record.rendimiento_diesel = '5'
+                record.rendimiento_diesel = 5
             
