@@ -188,7 +188,7 @@ class proyecto_ruta (models.Model):
         for record in self:
             if record.carga_ruta == '1':
                 record.rendimiento_diesel = 1.6
-            if record.carga_ruta == '3':
+            elif record.carga_ruta == '3':
                 record.rendimiento_diesel = 2.3
             else:
                 record.rendimiento_diesel = 2.2
