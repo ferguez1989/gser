@@ -41,8 +41,7 @@ class proyecto_ruta (models.Model):
         ('4','Gondola'),
         ('5','Plataforma'),
         ('6','Torton'),
-        ('7','N/A'),
-        ('8','12'),],
+        ('7','N/A'),],
         string="Carga",
     )
     capacidad_ruta = fields.Selection([
