@@ -170,6 +170,7 @@ class proyecto_ruta (models.Model):
         #ondelete='set null',
         #index=True,
     )
+    
     # Datos Computados para el calculo de gastos
     @api.depends("diesel", "precio_diesel","caseta_llave","gastos_operador","caseta_efectivo")
     def _compute_gastoT(self):
