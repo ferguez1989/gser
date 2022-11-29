@@ -31,7 +31,6 @@ class servicio_externo_proyecto (models.Model):
         related ='vehiculo.model_year',
         string="Año vehículo",
     )
-   
     remolque_1 = fields.Many2one(
         comodel_name ='fleet.vehicle',
         ondelete ='set null',
@@ -42,7 +41,6 @@ class servicio_externo_proyecto (models.Model):
         related ='remolque_1.no_economico',
         string="No. Economico r1",
     )
-
     remolque_2 = fields.Many2one(
         comodel_name ='fleet.vehicle',
         ondelete ='set null',
@@ -53,7 +51,6 @@ class servicio_externo_proyecto (models.Model):
         related ='remolque_2.no_economico',
         string="No. Economico r2",
     )
-
     tipo_ruta_viaje= fields.Selection(
        related = 'project_id.tipo_precio',
         string ="Tipo Ruta",
@@ -138,6 +135,7 @@ class servicio_externo_proyecto (models.Model):
     fecha_pago = fields.Date(
         string ="Fecha pago",
     )
+    
     @api.depends("cantidad", "precio_ruta_litro")
     def _compute_subtotal(self):
         for record in self:
