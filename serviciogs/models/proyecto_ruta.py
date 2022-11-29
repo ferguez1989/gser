@@ -174,8 +174,7 @@ class proyecto_ruta (models.Model):
     @api.depends("diesel", "precio_diesel","caseta_llave","gastos_operador","caseta_efectivo")
     def _compute_gastoT(self):
         for record in self:
-            if record.gasto_total != 0:
-                record.gasto_total = (record.diesel * record.precio_diesel) + record.caseta_llave + record.caseta_efectivo + record.gastos_operador
+            record.gasto_total = (record.diesel * record.precio_diesel) + record.caseta_llave + record.caseta_efectivo + record.gastos_operador
     @api.depends("caseta_efectivo", "gastos_operador")
     def _compute_gastoopera(self):
         for record in self:

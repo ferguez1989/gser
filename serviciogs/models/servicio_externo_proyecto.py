@@ -135,7 +135,7 @@ class servicio_externo_proyecto (models.Model):
     fecha_pago = fields.Date(
         string ="Fecha pago",
     )
-    
+
     @api.depends("cantidad", "precio_ruta_litro")
     def _compute_subtotal(self):
         for record in self:
@@ -148,4 +148,5 @@ class servicio_externo_proyecto (models.Model):
     @api.depends("subtotal", "iva", "retencion")
     def _compute_total_facturar(self):
         for record in self:
-            record.total_facturar = (record.subtotal + record.iva) - record.retencion
+            if record.gasto_total == 0:
+                record.total_facturar = (record.subtotal + record.iva) - record.retencion
