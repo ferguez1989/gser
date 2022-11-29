@@ -120,6 +120,7 @@ class servicio_externo_proyecto (models.Model):
     total_facturar = fields.Float(
         compute ='_compute_total_facturar',
         string ="Total a Facturar",
+        store=True,
     )
     forma_pago = fields.Selection([
         ('1','Transferencia'),
