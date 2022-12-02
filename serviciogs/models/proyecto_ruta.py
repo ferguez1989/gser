@@ -118,7 +118,6 @@ class proyecto_ruta (models.Model):
     gasto_total = fields.Float(
         compute='_compute_gastoT',
         string="Gasto Total",
-        store=True,
     )
     # Datos de origen
     recoge_en_origen = fields.Char(

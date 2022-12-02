@@ -146,8 +146,8 @@ class servicio_externo_proyecto (models.Model):
         for record in self:
             record.iva = record.subtotal * 0.16
             record.retencion = record.subtotal * 0.04
-    @api.depends("subtotal", "iva", "retencion")
+    @api.depends("subtotal", "iva", "retencion", "cantidad")
     def _compute_total_facturar(self):
         for record in self:
-            if record.total_facturar != 0:
+            if record.cantidad != 0:
                 record.total_facturar = (record.subtotal + record.iva) - record.retencion
