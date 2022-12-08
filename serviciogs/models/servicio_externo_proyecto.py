@@ -150,4 +150,6 @@ class servicio_externo_proyecto (models.Model):
     def _compute_total_facturar(self):
         for record in self:
             if record.cantidad != 0:
+                record.total_facturar
+            else:
                 record.total_facturar = (record.subtotal + record.iva) - record.retencion
