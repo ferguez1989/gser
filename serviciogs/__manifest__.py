@@ -9,6 +9,7 @@
         "sale_management",
         "project",
         "fleet",
+        "account",
     ],
     'data': [
         # security
