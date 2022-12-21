@@ -3,12 +3,27 @@ from odoo import fields, models, api
 class FlotaSerrano(models.Model):
     _inherit = "fleet.vehicle"                 
     tipo_vehiculo = fields.Selection([
-        ('1','Unidad'),
-        ('2','Remolque'),],
+        ('1','Tractocamion'),
+        ('2','Unidad'),
+        ('3','Torton'),
+        ('4','Pickup'),
+        ('5','Unidad'),
+        ('6','Maquinaria Pesada'),
+        ('7','Tanque'),
+        ('8','Caja Seca'),
+        ('9','Gondola'),
+        ('10','Plataforma'),
+        ('11','Cama Baja'),
+        ('12','Caja Refrigerada'),
+        ('13','Tanque Acero Inoxidable'), 
+        ('14','Remolque'),],
         string="Tipo de vehiculo",
-    )    
+    )
     no_economico = fields.Char(
         string="No. economico",
+    )   
+    capacidad_remolque = fields.Char(
+        string="Capacidad Remolque",
     )
     #Parte del motor
     capacidad_tanque =fields.Integer(

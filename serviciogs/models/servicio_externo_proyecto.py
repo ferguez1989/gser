@@ -128,9 +128,9 @@ class servicio_externo_proyecto (models.Model):
         string ="Forma de pago",
     )          
     no_factura = fields.Char(
-        comodel_name='account.move',
-        ondelete='set null',
-        index=True,
+        #comodel_name='account.move',
+        #ondelete='set null',
+        #index=True,
         string ="No. Factura",
     )    
     fecha_factura = fields.Date(

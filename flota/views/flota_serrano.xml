@@ -8,6 +8,7 @@
       <field name="location" position="after">
         <field name="tipo_vehiculo"/>
         <field name="no_economico"/>
+        <field name="capacidad_remolque"/>
       </field>
       <!--Seccion de motor-->
       <field name="co2_standard" position="after">
