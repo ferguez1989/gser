@@ -54,10 +54,10 @@
                   <field name="total_facturar" readonly="1"/>
                 </group>
                 <group string="">
-                  <field name="forma_pago"/>           
-                  <field name="no_factura"/>
-                  <field name="fecha_factura"/>
-                  <field name="fecha_pago"/>
+                  <field name="forma_pago" invisible="1"/>           
+                  <field name="no_factura" invisible="1"/>
+                  <field name="fecha_factura" invisible="1"/>
+                  <field name="fecha_pago" invisible="1"/>
                 </group>
               </group>
             </group>
@@ -101,7 +101,7 @@
           <field name="gasto_total_op_viaje"/>
           <field name="gasto_total_caseta_viaje" optional="show" sum="Sum of gasto_total_caseta_viaje"/>
           <field name="total_facturar" optional="show" sum="Sum of gasto_total_caseta_viaje"/>
-          <field name="no_factura" optional="show"/>
+          <field name="no_factura" optional="show" invisible="1"/>
         </field>
       </field>
     </record>

@@ -129,6 +129,7 @@ class servicio_externo_proyecto (models.Model):
     )          
     no_factura = fields.Char(
         string ="No. Factura",
+        #comodel_name='account.view_move_form',
     )    
     fecha_factura = fields.Date(
         string ="Fecha de factura",
