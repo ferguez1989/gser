@@ -3,9 +3,9 @@ from unittest.mock import DEFAULT
 from odoo import fields, models, api
 class servicio_externo_proyecto (models.Model):
     _inherit = ['project.task']
-    #allow_timesheets=fields.Boolean(
-    #    default = False,
-    #)   
+    allow_timesheets=fields.Boolean(
+        default = False,
+    )   
     estatus_viaje = fields.Selection([
         ('1','Programado'),
         ('2','Pendiente de gastos'),
