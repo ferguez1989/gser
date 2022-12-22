@@ -20,7 +20,7 @@
             <field name="carga_viaje" readonly ="1" />
             <field name="capacidad_viaje" readonly ="1"/>
             <field name="producto_viaje" readonly ="1"/>
-            <field name="vehiculo" domain="['|',(('tipo_vehiculo', '=', 1), ('tipo_vehiculo', '=', 2), ('tipo_vehiculo', '=', 3), ('tipo_vehiculo', '=', 4), ('tipo_vehiculo', '=', 5), ('tipo_vehiculo', '=', 6))]" required="1"/>
+            <field name="vehiculo" domain="['|','|','|','|','|',('tipo_vehiculo', '=', 1), ('tipo_vehiculo', '=', 2), ('tipo_vehiculo', '=', 3), ('tipo_vehiculo', '=', 4), ('tipo_vehiculo', '=', 5), ('tipo_vehiculo', '=', 6)]" required="1"/>
             <field name="anio_vehiculo" readonly="1"/>
             <field name="remolque_1" domain="[('tipo_vehiculo', '=', 7), ('tipo_vehiculo', '=', 8), ('tipo_vehiculo', '=', 9), ('tipo_vehiculo', '=', 10), ('tipo_vehiculo', '=', 11), ('tipo_vehiculo', '=', 12), ('tipo_vehiculo', '=', 13), ('tipo_vehiculo', '=', 14)]"/>
             <field name="r1_no_economico"/>
