@@ -126,13 +126,19 @@ class servicio_externo_proyecto (models.Model):
         ('1','Transferencia'),
         ('2','Efectivo'),],
         string ="Forma de pago",
+    )
+    no_factura = fields.Many2one(
+        comodel_name='account.move',
+        ondelete='set null',
+        index=True,
+        string ="No. Factura",
     )          
-    no_factura = fields.Char(
+    #no_factura = fields.Char(
         #comodel_name='account.move',
         #ondelete='set null',
         #index=True,
-        string ="No. Factura",
-    )    
+        #string ="No. Factura",
+    #)    
     fecha_factura = fields.Date(
         string ="Fecha de factura",
     )
