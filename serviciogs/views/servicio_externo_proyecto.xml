@@ -55,7 +55,7 @@
                 </group>
                 <group string="">
                   <field name="forma_pago" invisible="1"/>           
-                  <field name="no_factura" domain="[('partner_id', '=', partner_id)]" invisible="1"/>
+                  <field name="no_factura" domain="[('partner_id', '=', partner_id)]"/>
                   <field name="fecha_factura" invisible="1"/>
                   <field name="fecha_pago" invisible="1"/>
                 </group>
