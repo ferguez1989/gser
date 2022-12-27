@@ -141,9 +141,9 @@ class proyecto_ruta (models.Model):
     )
     estado_origen= fields.Many2one(
         related ='recoge_en_origen.state_id',
-        string ="Estado origen:",
         comodel_name='res.country.state',
         ondelete='set null',
+        string ="Estado origen:",
         readonly=True,
         index=True,
     )
@@ -163,17 +163,17 @@ class proyecto_ruta (models.Model):
     )
     pais_destino= fields.Many2one(
         related ='entrega_destino.country_id',
-        string ="País destino:",
         comodel_name='res.country',
         ondelete='set null',
+        string ="País destino:",
         readonly=True,
         index=True,
     )
     estado_destino= fields.Many2one(
         related ='entrega_destino.state_id',
-        string ="Estado destino:",
         comodel_name='res.country.state',
         ondelete='set null',
+        string ="Estado destino:",
         readonly=True,
         index=True,
     )
