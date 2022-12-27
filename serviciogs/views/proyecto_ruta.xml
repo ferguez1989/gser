@@ -45,11 +45,11 @@
                   <!--domain="[('country.state_id', '=', estado_origen)]"-->
                 </group>
                 <group string="Destino">
-                  <field name="entrega_destino" required="1"/>
-                  <field name="direccion_destino" required="1"/>
-                  <field name="pais_destino" required="1"/>
-                  <field name="estado_destino" domain="[('country_id', '=', pais_origen)]" required="1"/>
-                  <field name="ciudad_destino" required="1"/>
+                  <field name="entrega_destino"/>
+                  <field name="direccion_destino"/>
+                  <field name="pais_destino"/>
+                  <field name="estado_destino"/>
+                  <field name="ciudad_destino"/>
                   <!--falta completar la cidudad odoo enterprise-->
                   <!--domain="[('country.state_id', '=', estado_destino)]"-->
                 </group>

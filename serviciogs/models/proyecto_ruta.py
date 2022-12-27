@@ -153,8 +153,11 @@ class proyecto_ruta (models.Model):
         readonly=True,
     )
     # Datos de destino
-    entrega_destino = fields.Char(
+    entrega_destino = fields.Many2one(
         string="Se entrega en:",
+        comodel_name='res.partner',
+        ondelete='set null',
+        index=True,
     )
     direccion_destino= fields.Char(
         related ='entrega_destino.street',
