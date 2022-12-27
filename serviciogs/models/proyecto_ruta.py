@@ -132,22 +132,22 @@ class proyecto_ruta (models.Model):
         readonly=True,
     )
     pais_origen = fields.Char(
-        #related ='recoge_en_origen.country_id',
-        string="Dirección origen:",
+        related ='recoge_en_origen.res.country.country_id',
+        string="País origen:",
         readonly=True,
     )
     estado_origen = fields.Char(
         #related ='recoge_en_origen.state_id',
-        string="Dirección origen:",
+        string="Estado origen:",
         readonly=True,
     )
     ciudad_origen = fields.Char(
         #related ='recoge_en_origen.city',
-        string="Dirección origen:",
+        string="Ciudad origen:",
         readonly=True,
     )
     #pais_origen= fields.Many2one(
-    #    string ="Paíciudad_origens origen:",
+    #    string ="País origen:",
     #    comodel_name='res.country',
     #    ondelete='set null',
     #    index=True,
