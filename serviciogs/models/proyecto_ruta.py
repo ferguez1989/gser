@@ -130,15 +130,15 @@ class proyecto_ruta (models.Model):
         related ='recoge_en_origen.street',
         string="Dirección origen:",
     )
-    pais_origen = fields.Char(
+    pais_origen = fields.Many2one(
         related ='recoge_en_origen.country_id',
         string="Dirección origen:",
     )
-    estado_origen = fields.Char(
+    estado_origen = fields.Many2one(
         related ='recoge_en_origen.state_id',
         string="Dirección origen:",
     )
-    ciudad_origen = fields.Char(
+    ciudad_origen = fields.Many2one(
         related ='recoge_en_origen.city',
         string="Dirección origen:",
     )
