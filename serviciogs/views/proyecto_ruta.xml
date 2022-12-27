@@ -39,7 +39,7 @@
                   <field name="recoge_en_origen"/>
                   <field name="direccion_origen" required="1"/>
                   <field name="pais_origen" required="1"/>
-                  <field name="estado_origen" domain="[('country_id', '=', pais_origen)]" required="1"/>
+                  <field name="estado_origen" required="1"/>
                   <field name="ciudad_origen" required="1"/>
                   <!--falta completar la cidudad odoo enterprise-->
                   <!--domain="[('country.state_id', '=', estado_origen)]"-->
