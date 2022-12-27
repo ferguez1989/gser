@@ -10,7 +10,7 @@
         "project",
         "fleet",
         "account",
-        "partner",
+        "res",
     ],
     'data': [
         # security
