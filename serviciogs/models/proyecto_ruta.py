@@ -127,26 +127,39 @@ class proyecto_ruta (models.Model):
         index=True,
     )
     direccion_origen= fields.Char(
+        related ='recoge_en_origen.street',
         string="Dirección origen:",
     )
-    pais_origen= fields.Many2one(
-        string ="País origen:",
-        comodel_name='res.country',
-        ondelete='set null',
-        index=True,
+    pais_origen= fields.Char(
+        related ='recoge_en_origen.country_id',
+        string="Dirección origen:",
     )
-    estado_origen= fields.Many2one(
-        string ="Estado origen:",
-        comodel_name='res.country.state',
-        ondelete='set null',
-        index=True,
+    estado_origen= fields.Char(
+        related ='recoge_en_origen.state_id',
+        string="Dirección origen:",
     )
     ciudad_origen= fields.Char(
-        string ="Ciudad origen:",
-        comodel_name='res.city',
-        ondelete='set null',
-        index=True,
+        related ='recoge_en_origen.city',
+        string="Dirección origen:",
     )
+    #pais_origen= fields.Many2one(
+    #    string ="Paíciudad_origens origen:",
+    #    comodel_name='res.country',
+    #    ondelete='set null',
+    #    index=True,
+    #)
+    #estado_origen= fields.Many2one(
+    #    string ="Estado origen:",
+    #    comodel_name='res.country.state',
+    #    ondelete='set null',
+    #    index=True,
+    #)
+    #= fields.Char(
+    #    string ="Ciudad origen:",
+    #    comodel_name='res.city',
+    #    ondelete='set null',
+    #    index=True,
+    #)
     # Datos de destino
     entrega_destino = fields.Char(
         string="Se entrega en:",
