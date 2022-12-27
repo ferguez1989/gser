@@ -132,7 +132,7 @@ class proyecto_ruta (models.Model):
         readonly=True,
     )
     pais_origen = fields.Char(
-        related ='recoge_en_origen.res.country.country_id',
+        related ='recoge_en_origen.country_id',
         string="País origen:",
         readonly=True,
     )
