@@ -137,59 +137,50 @@ class proyecto_ruta (models.Model):
         ondelete='set null',
         string="País origen:",
         readonly=True,
+        index=True,
     )
-    estado_origen = fields.Char(
-        #related ='recoge_en_origen.state_id',
-        string="Estado origen:",
+    estado_origen= fields.Many2one(
+        related ='recoge_en_origen.state_id',
+        string ="Estado origen:",
+        comodel_name='res.country.state',
+        ondelete='set null',
+        readonly=True,
+        index=True,
+    )
+    ciudad_origen= fields.Char(
+        related ='recoge_en_origen.city',
+        string ="Ciudad origen:",
         readonly=True,
     )
-    ciudad_origen = fields.Char(
-        #related ='recoge_en_origen.city',
-        string="Ciudad origen:",
-        readonly=True,
-    )
-    #pais_origen= fields.Many2one(
-    #    string ="País origen:",
-    #    comodel_name='res.country',
-    #    ondelete='set null',
-    #    index=True,
-    #)
-    #estado_origen= fields.Many2one(
-    #    string ="Estado origen:",
-    #    comodel_name='res.country.state',
-    #    ondelete='set null',
-    #    index=True,
-    #)
-    #= fields.Char(
-    #    string ="Ciudad origen:",
-    #    comodel_name='res.city',
-    #    ondelete='set null',
-    #    index=True,
-    #)
     # Datos de destino
     entrega_destino = fields.Char(
         string="Se entrega en:",
     )
     direccion_destino= fields.Char(
+        related ='entrega_destino.street',
         string="Dirección destino:",
+        readonly=True,
     )
     pais_destino= fields.Many2one(
+        related ='entrega_destino.country_id',
         string ="País destino:",
         comodel_name='res.country',
         ondelete='set null',
+        readonly=True,
         index=True,
     )
     estado_destino= fields.Many2one(
+        related ='entrega_destino.state_id',
         string ="Estado destino:",
         comodel_name='res.country.state',
         ondelete='set null',
+        readonly=True,
         index=True,
     )
     ciudad_destino= fields.Char(
+        related ='entrega_destino.city',
         string ="Ciudad destino:",
-        #comodel_name='res.country.city',
-        #ondelete='set null',
-        #index=True,
+        readonly=True,
     )
     # Datos Computados para el calculo de gastos
     @api.depends("diesel", "precio_diesel","caseta_llave","gastos_operador","caseta_efectivo")
