@@ -126,12 +126,14 @@ class proyecto_ruta (models.Model):
         ondelete='set null',
         index=True,
     )
-    direccion_origen = fields.Char(
-        related ='recoge_en_origen.street',
+    direccion_origen = fields.Many2one(
         string="Dirección origen:",
+        comodel_name='res.country'
+        ondelete='set null',
+        related ='recoge_en_origen.street',
         readonly=True,
     )
-    pais_origen = fields.Selection(
+    pais_origen = fields.Many2one(
         related ='recoge_en_origen.country_id',
         string="País origen:",
         readonly=True,
