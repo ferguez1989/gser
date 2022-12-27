@@ -37,10 +37,10 @@
                 </group>
                 <group string="Origen">
                   <field name="recoge_en_origen"/>
-                  <field name="direccion_origen" required="1"/>
-                  <field name="pais_origen" required="1"/>
-                  <field name="estado_origen" required="1"/>
-                  <field name="ciudad_origen" required="1"/>
+                  <field name="direccion_origen"/>
+                  <field name="pais_origen"/>
+                  <field name="estado_origen"/>
+                  <field name="ciudad_origen"/>
                   <!--falta completar la cidudad odoo enterprise-->
                   <!--domain="[('country.state_id', '=', estado_origen)]"-->
                 </group>
