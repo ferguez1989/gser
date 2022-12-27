@@ -131,17 +131,17 @@ class proyecto_ruta (models.Model):
         string="Dirección origen:",
         readonly=True,
     )
-    pais_origen = fields.Many2one(
+    pais_origen = fields.Char(
         #related ='recoge_en_origen.country_id',
         string="Dirección origen:",
         readonly=True,
     )
-    estado_origen = fields.Many2one(
+    estado_origen = fields.Char(
         #related ='recoge_en_origen.state_id',
         string="Dirección origen:",
         readonly=True,
     )
-    ciudad_origen = fields.Many2one(
+    ciudad_origen = fields.Char(
         #related ='recoge_en_origen.city',
         string="Dirección origen:",
         readonly=True,
