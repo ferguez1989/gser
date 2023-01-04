@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="pagosimms_view_form" model="ir.ui.view">
+        <field name="name">pagosimms.view.form</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.hr_plan_view_search"></field>
+        <field name="arch" type="xml">
+          <page name="name" position="after">
+            <group string="">
+                  <field name="pago_imms"/>
+                  <field name="fecha_pago"/>
+            </group>
+          </page>
+        </field>
+    </record>
+</odoo>	
