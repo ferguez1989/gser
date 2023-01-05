@@ -5,7 +5,7 @@
         <field name="model">hr.plan</field>
         <field name="inherit_id" ref="hr.hr_plan_view_form"></field>
         <field name="arch" type="xml">
-            <label for="name" string="" position="replace"/>
+            <label for="name" position="replace"/>
                 <field name="name" string="Nombre"/>
             </field>
             <field name="plan_activity_type_ids" position="replace">
