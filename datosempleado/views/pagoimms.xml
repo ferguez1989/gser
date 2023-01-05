@@ -3,7 +3,7 @@
     <record id="pagoimms_view_form" model="ir.ui.view">
         <field name="name">pagoimms.view.form</field>
         <field name="model">hr.plan</field>
-        <field name="inherit_id" ref="hr.hr_plan_view_search"></field>
+        <field name="inherit_id" ref="hr.hr_plan_view_form"></field>
         <field name="arch" type="xml">
             <field name="plan_activity_type_ids" position="replace">
                 <field name="pago_imms"/>
