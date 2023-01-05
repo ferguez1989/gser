@@ -12,15 +12,15 @@
             </field>
         </field>
     </record>
-    <record id="pago_imss_tree_fsm" model="ir.ui.view">
-      <field name="name">pago.imss.tree.fsm</field>
-      <field name="model">project.task</field>
-      <field name="inherit_id" ref="hr.hr_plan_view_tree"/>
-      <field name="arch" type="xml">
-        <field name="name" position="after">
-          <field name="empresa"/>
-          <field name="pago_imss"/>
+    <record id="pago_imss_view_tree" model="ir.ui.view">
+        <field name="name">pago.imss.view.tree</field>
+        <field name="model">hr.plan</field>
+        <field name="inherit_id" ref="hr.hr_plan_view_tree"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="empresa"/>
+                <field name="pago_imss"/>
+            </field>
         </field>
-      </field>
     </record>
 </odoo>
