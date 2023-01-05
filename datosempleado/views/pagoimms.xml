@@ -7,9 +7,20 @@
         <field name="arch" type="xml">
             <field name="plan_activity_type_ids" position="replace">
                 <field name="plan_activity_type_ids" invisible="1"/>
-                <field name="pago_imms"/>
+                <field name="pago_imss"/>
                 <field name="empresa"/>
             </field>
         </field>
+    </record>
+    <record id="pago_imss_tree_fsm" model="ir.ui.view">
+      <field name="name">pago.imss.tree.fsm</field>
+      <field name="model">project.task</field>
+      <field name="inherit_id" ref="hr.hr_plan_view_tree"/>
+      <field name="arch" type="xml">
+        <field name="name" position="after">
+          <field name="empresa" optional="show"/>
+          <field name="pago_imss" optional="show"/>
+        </field>
+      </field>
     </record>
 </odoo>
