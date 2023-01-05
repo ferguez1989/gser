@@ -5,6 +5,7 @@
         <field name="model">hr.plan</field>
         <field name="inherit_id" ref="hr.hr_plan_view_form"></field>
         <field name="arch" type="xml">
+            <<label for="name" string="" position="replace"/>
             <field name="name" position="replace">
                 <label for="name" string="Nombre"/>
                 <field name="name" string="Nombre"/>
