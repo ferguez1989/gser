@@ -10,7 +10,7 @@
                   <field name="pago_imms"/>
                   <field name="fecha_pago"/>
             </group>
-          </page>
+          </field>
         </field>
     </record>
 </odoo>	
