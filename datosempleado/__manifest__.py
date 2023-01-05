@@ -14,5 +14,6 @@
         # reports
         # views
         'views/datosempleados.xml',
+        'views/pagoimms.xml',
     ],
 }
