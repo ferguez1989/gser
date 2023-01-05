@@ -18,8 +18,8 @@
       <field name="inherit_id" ref="hr.hr_plan_view_tree"/>
       <field name="arch" type="xml">
         <field name="name" position="after">
-          <field name="empresa" optional="show"/>
-          <field name="pago_imss" optional="show"/>
+          <field name="empresa"/>
+          <field name="pago_imss"/>
         </field>
       </field>
     </record>
