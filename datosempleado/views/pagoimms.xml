@@ -5,10 +5,10 @@
         <field name="model">hr.plan</field>
         <field name="inherit_id" ref="hr.hr_plan_view_search"></field>
         <field name="arch" type="xml">
-            <field name="name" position="after">
+            <field name="plan_activity_type_ids" position="replace">
                 <field name="pago_imms"/>
                 <field name="fecha_pago"/>
             </field>
         </field>
     </record>
-</odoo>	
+</odoo>
