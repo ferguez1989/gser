@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <field name="plan_activity_type_ids" position="replace">
                 <field name="pago_imms"/>
-                <field name="fecha_pago"/>
+                <field name="Empresa"/>
             </field>
         </field>
     </record>

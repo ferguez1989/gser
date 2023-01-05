@@ -6,6 +6,9 @@ class datosEmpleados (models.Model):
     pago_imms = fields.Binary(
         string="Pago de Seguro",
     )
-    fecha_pago = fields.Date(    
-        string="Fecha pago",
+    empresa = fields.Many2one(
+        comodel_name='res.company',
+        ondelete='set null',
+        index=True,
+        string="Empresa",
     )
