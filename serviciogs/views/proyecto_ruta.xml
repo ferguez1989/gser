@@ -52,6 +52,7 @@
                   <field name="ciudad_destino"/>
                   <!--falta completar la cidudad odoo enterprise-->
                   <!--domain="[('country.state_id', '=', estado_destino)]"-->
+                  <!--domain-->
                 </group>
               </group>
             </group>
@@ -59,3 +60,4 @@
         </field>
     </record>
 </odoo>
+
