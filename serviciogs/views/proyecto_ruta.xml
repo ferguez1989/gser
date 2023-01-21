@@ -45,7 +45,7 @@
                   <!--domain="[('country.state_id', '=', estado_origen)]"-->
                 </group>
                 <group string="Destino">
-                  <field name="entrega_destino"/>
+                  <field name="entrega_destino" domain="[('parent_id', '=', partner_id)]"/>
                   <field name="direccion_destino"/>
                   <field name="pais_destino"/>
                   <field name="estado_destino"/>
