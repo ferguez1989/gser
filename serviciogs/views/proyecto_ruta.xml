@@ -36,7 +36,7 @@
                   <field name="gasto_total" required="1"/>
                 </group>
                 <group string="Origen">
-                  <field name="recoge_en_origen" domain="[('partner_id', '=', partner_id)]"/>
+                  <field name="recoge_en_origen" domain="[('parent_id', '=', partner_id)]"/>
                   <field name="direccion_origen"/>
                   <field name="pais_origen"/>
                   <field name="estado_origen"/>

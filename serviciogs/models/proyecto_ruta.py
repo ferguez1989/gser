@@ -121,10 +121,10 @@ class proyecto_ruta (models.Model):
     )
     # Datos de origen
     recoge_en_origen = fields.Many2one(
-        string="Se recoge en:",
         comodel_name='res.partner',
         ondelete='set null',
         index=True,
+        string="Se recoge en:",
     )
     direccion_origen = fields.Char(
         related ='recoge_en_origen.street',
