@@ -1,0 +1,3 @@
+[submodule "tequitl_enterprise"]
+	path = tequitl_enterprise
+	url = git@github.com:humanytek-team/tequitl_enterprise.git
