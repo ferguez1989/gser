@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <report id="report_session" model="account.move" string="Carta porte" 
+  name="cartaportegser.report_carta_porte" file="cartaportegser.report_session" report_type="qweb-pdf" />
+  
+  <template id="report_carta_porte">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="web.external_layout">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-12 text-center" style="background-color: #486f9e; color: white; border-radius:10px;">
+                      <h4>CARTA PORTE</h4>
+                      <h5><span t-field="o.l10n_mx_edi_cfdi_uuid"/></h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="page" style="max-width:100mm">
+                  <div class="row texty-center">
+                    
+                    <div class="col-12"><h3><br/>Factura <span t-field="o.name"/></h3></div>
+                  </div>
+                </div>
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-6 text-left p-3" style="font-size: 10px; color: BLACK; border: 1px solid #000;">
+                      <h6>EMPRESA:</h6>
+                      <span t-field="o.company_id.name"/><br/>
+                      <span t-field="o.company_id.street"/><br/>
+                      <span t-field="o.company_id.city"/>, 
+                      <span t-field="o.company_id.state_id"/>,
+                      <span t-field="o.company_id.country_id"/>.<br/>
+                      CP:
+                      <span t-field="o.company_id.zip"/><br/>
+                      RFC:
+                      <span t-field="o.company_id.vat"/><br/>
+                      Regimen Fiscal: Coordinados<br/>
+                      Expedido en: LAGOS DE MORENO, Jalisco, C.P.47400
+                    </div>
+                    <div class="col-6 text-left p-3" style="font-size: 10px; color: BLACK; border: 1px solid #000;">
+                      <h6>CLIENTE:</h6>
+                      <span t-field="o.partner_id"/><br/>
+                      <span t-field="o.partner_id.street_name"/><br/>
+                      No.
+                      <span t-field="o.partner_id.street_number"/>
+                      Int.
+                      <span t-field="o.partner_id.street_number2"/><br/>
+                      Colonia:
+                      <span t-field="o.partner_id.l10n_mx_edi_colony"/><br/>
+                      <span t-field="o.partner_id.l10n_mx_edi_locality_id"/>,
+                      <span t-field="o.partner_id.city"/>,
+                      <span t-field="o.partner_id.city_id"/>,
+                      <span t-field="o.partner_id.state_id"/>,<br/>
+                      <span t-field="o.partner_id.country_id"/>.<br/>
+                      CP:
+                      <span t-field="o.partner_id.zip"/><br/>
+                      RFC:
+                      <span t-field="o.partner_id.vat"/><br/>
+                      
+                    </div>
+                  </div>
+                </div>
+            
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-2 text-center font-weight-bold"><br/>Fecha de Factura:</div>
+                    <div class="col-2 text-center font-weight-bold"><br/>Fecha de Vencimiento:</div>
+                    <div class="col-2 text-center font-weight-bold"><br/>Moneda:</div>
+                    <div class="col-2 text-center font-weight-bold"><br/>Uso CDFI:</div>
+                    <div class="col-2 text-center font-weight-bold"><br/>Forma de Pago:</div>
+                    <div class="col-2 text-center font-weight-bold"><br/>Método de Pago:</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-2 text-center"><span t-field="o.invoice_date"/></div>
+                    <div class="col-2 text-center"><span t-field="o.invoice_payment_term_id"/></div>
+                    <div class="col-2 text-center"><span t-field="o.currency_id"/></div>
+                    <div class="col-2 text-center"><span t-esc="o.l10n_mx_edi_usage"/></div>
+                    <div class="col-2 text-center"><span t-field="o.l10n_mx_edi_payment_method_id.code"/> - <span t-field="o.l10n_mx_edi_payment_method_id"/></div>
+                    <div class="col-2 text-center"><span t-field="o.l10n_mx_edi_payment_policy"/></div>
+                  </div>
+                    <hr class="my-4"/>
+                </div>
+
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-2 text-center font-weight-bold"><br/>Código Producto:</div>
+                    <div class="col-2 text-center font-weight-bold"><br/>Descripción:</div>
+                    <div class="col-2 text-center font-weight-bold"><br/>Cantidad:</div>
+                    <div class="col-2 text-center font-weight-bold"><br/>Precio Unitario:</div>
+                    <div class="col-2 text-center font-weight-bold"><br/>Código Unidad Impuestos:</div>
+                    <div class="col-2 text-center font-weight-bold"><br/>Importe:</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-2 text-center"><span t-field="o.invoice_line_ids.product_id"/></div>
+                    <div class="col-2 text-center"><span t-field="o.invoice_line_ids.name"/></div>
+                    <div class="col-2 text-center"><span t-field="o.invoice_line_ids.quantity"/></div>
+                    <div class="col-2 text-center"><span t-field="o.invoice_line_ids.price_unit"/></div>
+                    <div class="col-2 text-center"><span t-field="o.invoice_line_ids.tax_ids"/> - <span t-field="o.l10n_mx_edi_payment_method_id"/></div>
+                    <div class="col-2 text-center"><span t-field="o.invoice_line_ids.price_subtotal"/></div>
+                  </div>
+                    <hr class="my-4"/>
+                </div>
+
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-7 text-left p-3">
+                    </div>
+                    <div class="col-3 text-left p-3" style="border-top: 2px solid black;">
+                      Subtotal
+                    </div>
+                    <div class="col-2 text-left p-3" style="border-top: 2px solid black;">
+                      <span t-field="o.invoice_line_ids.price_subtotal"/>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-7 text-left p-3">
+                    </div>
+                    <div class="col-3 text-left p-3" style="border-top: 2px solid black;">
+                      IVA 16%
+                    </div>
+                    <div class="col-2 text-left p-3" style="border-top: 2px solid black;">
+                      <span t-field="o.invoice_line_ids.price_subtotal"/>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-7 text-left p-3">
+                    </div>
+                    <div class="col-3 text-left p-3" style="border-top: 2px solid black;">
+                      IVA Retencion 4%
+                    </div>
+                    <div class="col-2 text-left p-3" style="border-top: 2px solid black;">
+                      <span t-field="o.invoice_line_ids.price_subtotal"/>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-7 text-left p-3">
+                    </div>
+                    <div class="col-3 text-left p-3" style="border-top: 2px solid black;">
+                      TOTAL
+                    </div>
+                    <div class="col-2 text-left p-3" style="border-top: 2px solid black;">
+                      <span t-field="o.invoice_line_ids.price_subtotal"/>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-7 text-left p-3">
+                    </div>
+                    <div class="col-3 text-left p-3" style="border-top: 2px solid black;">
+                      Pagado en 00/00/0000
+                    </div>
+                    <div class="col-2 text-left p-3" style="border-top: 2px solid black;">
+                      <span t-field="o.invoice_line_ids.price_subtotal"/>
+                    </div>
+                  </div>                  
+                </div>
+                  <div class="row">
+                    <div class="col-7 text-left p-3">
+                    </div>
+                    <div class="col-3 text-left p-3" style="border-top: 2px solid black;">
+                      Importe adeudado
+                    </div>
+                    <div class="col-2 text-left p-3" style="border-top: 2px solid black;">
+                      <span t-field="o.invoice_line_ids.price_subtotal"/>
+                    </div>
+                  </div>
+            </t>
+        </t>
+    </t>
+  </template>
+</odoo>
+
+
+
+
+
+
